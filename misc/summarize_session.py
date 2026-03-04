@@ -20,7 +20,7 @@ session_id = sys.argv[1] #"11ece7bb-61cc-4374-8800-663bfc9e2932"
 
 async def resume_session():
 
-    print(f"=== Resuming session {session_id} ===")
+    print(f"=== Summarize session {session_id} ===")
 
     options = ClaudeAgentOptions(
         resume=session_id,

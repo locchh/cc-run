@@ -53,7 +53,7 @@ async def do_fortune():
 
     options = ClaudeAgentOptions(
         cwd=str(PROJECT_ROOT),
-        setting_sources=["user", "project"],
+        setting_sources=["project"],
         allowed_tools=["Skill", "Read", "Write", "Bash"],
         can_use_tool=my_permission_callback,
         permission_mode="default",
@@ -70,7 +70,6 @@ async def do_fortune():
         await client.query(prompt)
 
         while True:
-            last_text = ""
 
             async for message in client.receive_response():
                 
@@ -82,14 +81,14 @@ async def do_fortune():
                         elif isinstance(block, ToolUseBlock):
                             print(f"\n🔧 {block.name}: {json.dumps(block.input, indent=2)}")
 
-                elif isinstance(message, ResultMessage):
-                    SESSION_ID = message.session_id
-                    # Done only when fortune.md is written
-                    if (PROJECT_ROOT / output_dir / "fortune.md").exists():
-                        print(f"\n✅ Done! ({message.duration_ms}ms)")
-                        print(f"📁 Fortune saved to: {output_dir}/")
-                        print(f"Session ID: {SESSION_ID}")
-                        return
+                # elif isinstance(message, ResultMessage):
+                #     SESSION_ID = message.session_id
+                #     # Done only when fortune.md is written
+                #     if (PROJECT_ROOT / output_dir / "fortune.md").exists():
+                #         print(f"\n✅ Done! ({message.duration_ms}ms)")
+                #         print(f"📁 Fortune saved to: {output_dir}/")
+                #         print(f"Session ID: {SESSION_ID}")
+                #         return
 
             # Claude needs more input — let user respond or exit
             answer = input("\n👤 You (or 'exit' to quit): ").strip()
