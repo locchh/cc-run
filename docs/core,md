@@ -1,0 +1,45 @@
+```
+Message (base type)
+├── UserMessage
+│   ├── content: str | list[ContentBlock]
+│   ├── uuid: str | None
+│   ├── parent_tool_use_id: str | None
+│   └── tool_use_result: dict[str, Any] | None
+│
+├── AssistantMessage  
+│   ├── content: list[ContentBlock]
+│   ├── model: str
+│   ├── parent_tool_use_id: str | None
+│   └── error: AssistantMessageError | None
+│
+├── SystemMessage
+│   ├── subtype: str
+│   └── data: dict[str, Any]
+│
+└── ResultMessage
+    ├── subtype: str
+    ├── duration_ms: int
+    └── duration_api_ms: int
+```
+
+and:
+
+```
+ContentBlock (union type)
+├── TextBlock
+│   └── text: str
+│
+├── ThinkingBlock
+│   ├── thinking: str
+│   └── signature: str
+│
+├── ToolUseBlock
+│   ├── id: str
+│   ├── name: str
+│   └── input: dict[str, Any]
+│
+└── ToolResultBlock
+    ├── tool_use_id: str
+    ├── content: str | list[dict[str, Any]] | None
+    └── is_error: bool | None
+```
