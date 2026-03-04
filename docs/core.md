@@ -38,6 +38,41 @@ Session features:
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/sessions` | Create + start session (returns run_id) |
+| GET | `/sessions/{id}` | Get status, output_files, error |
+| GET | `/sessions/{id}/stream` | SSE stream - drains _message_queue |
+| POST | `/sessions/{id}/input` | Send input() when IDLE |
+| POST | `/sessions/{id}/cancel` | Cancel session |
+| DELETE | `/sessions/{id}` | Close session |
+| GET | `/sessions/{id}/files/{name}` | Download output file |
+
+## SSE Stream
+
+The SSE stream is the key - the client connects to `/stream` and receives all messages as server-sent events:
+
+- **AssistantMessage** - Claude's responses
+- **ToolUseBlock** - Tool execution requests  
+- **_IdleEvent** - "Claude is waiting for your input now"
+- **_ErrorEvent** - Error messages
+
+**_IdleEvent** tells the frontend when to show the input box.
+
+## Typical Flow
+
+```
+POST /sessions     → run_id
+GET  /stream       → ...messages... → IdleEvent (Claude asking question)
+POST /input        → user answer
+GET  /stream       → ...messages... → IdleEvent (Claude asking again)  
+POST /input        → user answer
+GET  /stream       → ...messages... → IdleEvent (files written)
+DELETE /sessions   → cleanup
+```
+
 **Notes**
 - One `ClaudeSDKClient` per session
 - wait-for-full-result
