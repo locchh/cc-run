@@ -14,6 +14,8 @@ Session features:
 
 - Fallback, Handle errors gracefully
 
+- Resource monitor
+
 ```ascii
 ╔══════════════════════════════════════════════════════════════╗
 ║                         REST APP                             ║
