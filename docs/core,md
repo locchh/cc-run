@@ -1,3 +1,5 @@
+Message Hierarchy:
+
 ```
 Message (base type)
 ├── UserMessage
@@ -22,7 +24,7 @@ Message (base type)
     └── duration_api_ms: int
 ```
 
-and:
+Content Block Hierarchy:
 
 ```
 ContentBlock (union type)
