@@ -56,8 +56,7 @@ def log(level: str, msg: str):
 
 app = FastAPI()
 
-TARGET_BASE_URL = os.getenv("MODEL_BASE_URL", "https://aiportalapi.stu-platform.live/jpe").rstrip("/")
-TARGET_API_KEY = os.getenv("MODEL_API_KEY", "")
+TARGET_BASE_URL = os.getenv("MODEL_BASE_URL")
 
 UNSUPPORTED_BETA_VALUES = {
     "prompt-caching-scope-2026-01-05",
