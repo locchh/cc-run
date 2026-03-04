@@ -24,7 +24,11 @@ set -a && source .env && set +a && claude --model ${MODEL_NAME}
 - **[Cookbook](https://platform.claude.com/cookbook/)** - Code examples and patterns
 
 ### Code & Libraries
+
 - **[claude-agent-sdk-python](https://github.com/anthropics/claude-agent-sdk-python)** - Official Python SDK
-- **[FastMCP - A2A-brigde](https://fastmcp.me/MCP/Details/981/a2a-bridge)** - MCP framework with A2A bridge
+
+- **[GongRzhe - A2A-MCP-Server](https://github.com/GongRzhe/A2A-MCP-Server)**
+
 - **[MCPMarket - A2A-brigde](https://mcpmarket.com/server/a2a-bridge)**
-- **[regismesquita - MCP_A2A](https://github.com/regismesquita/MCP_A2A/tree/main)** - Agent-to-agent communication
+
+- **[Textual](https://textual.textualize.io/)**: Python TUI framework for building rich terminal applications
