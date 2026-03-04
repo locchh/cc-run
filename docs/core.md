@@ -2,11 +2,11 @@
 
 Session features:
 
-- Support human's permissions
+- Support human's permissions -> permission callback
 
 - Support human's intermediate input
 
-- Intermediate output
+- Intermediate output -> Skip
 
 - File output
 
