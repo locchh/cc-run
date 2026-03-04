@@ -1,3 +1,5 @@
+## Setup
+
 ```bash
 # Run the proxy
 python proxy.py
@@ -5,6 +7,14 @@ python proxy.py
 # Launch Claude Code
 set -a && source .env && set +a && claude --model ${MODEL_NAME}
 ```
+
+## TODO
+
+💡 Use proxy for observability and debugging
+
+💡 A2A + claude code
+
+## References
 
 https://platform.claude.com/docs/en/agent-sdk/python
 
