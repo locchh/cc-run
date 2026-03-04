@@ -73,7 +73,7 @@ async def with_cwd_example():
     print("=== With CWD Example ===")
 
     options = ClaudeAgentOptions(
-        allowed_tools=["Read", "Write","Edit"],
+        allowed_tools=["Read", "Write", "Edit"],
         system_prompt="You are a helpful file assistant.",
         cwd=Path.cwd(),
     )

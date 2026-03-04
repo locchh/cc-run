@@ -2,11 +2,12 @@
 |---|---|---|
 |1|Quick Start|[✅](quickstart.py)|
 |2|Setting Sources|[✅](setting_sources.py)|
-|3|System Prompt||
-|4|Tools|[✅](quick_start.py)|
-|5|Permissions|[]|
-|6|MCP||
-|7|Hooks||
-|8|Skills||
-|9|Sub Agents||
-|10|Plugins||
+|3|System Prompt|[✅](system_prompt.py)|
+|4|Streaming|[✅](streaming_mode.py)|
+|5|Tools|[✅](quick_start.py)|
+|6|Permissions|[✅](tool_permission_callback.py)|
+|7|MCP|[✅](mcp_calculator.py)|
+|8|Hooks||
+|9|Skills||
+|10|Sub Agents|[]|
+|11|Plugins|[✅](plugin_example.py)|
