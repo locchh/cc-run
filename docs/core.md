@@ -1,3 +1,21 @@
+## Session
+
+Session features:
+
+- Support human's permissions
+
+- Support human's intermediate input
+
+- Intermediate output
+
+- File output
+
+- Interaction, Feedback
+
+- Fallback, Handle errors gracefully
+
+## Message Types
+
 Message Hierarchy:
 
 ```
@@ -24,6 +42,8 @@ Message (base type)
     └── duration_api_ms: int
 ```
 
+## Content Block Types
+
 Content Block Hierarchy:
 
 ```
@@ -45,6 +65,8 @@ ContentBlock (union type)
     ├── content: str | list[dict[str, Any]] | None
     └── is_error: bool | None
 ```
+
+## System Message
 
 Example System:
 

@@ -13,7 +13,6 @@ Note: Partial message streaming requires the CLI to support it, and the
 messages will include StreamEvent messages interspersed with regular messages.
 """
 
-
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -61,9 +60,9 @@ async def main():
 
 
 if __name__ == "__main__":
-
     print("Partial Message Streaming Example")
     print("=" * 50)
 
     import asyncio
+
     asyncio.run(main())

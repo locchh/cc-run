@@ -43,7 +43,6 @@ class TodoTracker:
 
 # Usage
 if __name__ == "__main__":
-
     import asyncio
 
     tracker = TodoTracker()
