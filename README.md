@@ -1,4 +1,4 @@
-# Astrologer
+# 🔮 Astrologer
 
 ## Setup
 
