@@ -7,10 +7,22 @@
 python proxy.py
 
 # Run the backend
-.venv/bin/python -m uvicorn astrologer.main:app --host ${BACKEND_HOST} --port ${BACKEND_PORT}
+.venv/bin/python -m uvicorn src.main:app --host ${BACKEND_HOST} --port ${BACKEND_PORT}
 
 # Launch Claude Code
 set -a && source .env && set +a && claude --model ${MODEL_NAME}
+
+# Run UI
+python -m http.server 8000
+```
+
+Or in detached mode:
+
+```bash
+# Run in background
+nohup python -m http.server 8000 > ui.log 2>&1 & echo $! > ui.pid
+
+nohup .venv/bin/python -m uvicorn src.main:app --host ${BACKEND_HOST} --port ${BACKEND_PORT} > backend.log 2>&1 & echo $! > backend.pid
 ```
 
 ## References
